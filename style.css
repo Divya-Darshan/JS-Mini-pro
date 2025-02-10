@@ -1,0 +1,245 @@
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+
+        center{
+            top: 80px;
+            left: 7em;
+            font-weight: 600;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 50px;
+            text-shadow: 0 0 10px gray;
+            font-size: xx-large;
+
+        }
+
+        .num{
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #add,#re,#sub{
+            text-transform: uppercase;
+            font-weight: 600;
+            margin: 10px 20px;
+            outline: none;
+            border: 2px solid  rgb(0, 255, 119);
+            background-color:#fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px  rgb(0, 255, 119);
+        }
+
+        #count{
+            display: flex;
+            justify-content: center;
+            margin: 1em;
+            text-shadow: 0 0 10px gray;
+            font-size:4em;
+            transition: 1s;
+            color:white;
+            font-weight: 600;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        #count :focus{
+            transition: 1s;
+        }
+
+        .card{
+            background-color: rgba(255, 255, 255, 0.686);
+            padding: 80px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgb(128, 128, 128);
+        }
+
+        .dies-roll{
+            background-color: rgb(225, 255, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #roll-input{
+            font-size: xx-large;
+            outline: none;
+            border:none;
+            background-color: transparent;
+            border-bottom: 2px solid white;
+
+        }
+
+        #roll-btn{
+            outline: none;
+            text-transform: uppercase;
+            font-size: x-large;
+            margin:20px;
+            background-color:#fff;
+            padding: 10px 20px ;
+            border-radius: 10px;
+        }
+
+        #roll-out{
+            font-size: 60px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: 600;
+        }
+
+
+
+        .clockcon{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: aquamarine;            
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: 600;
+            font-size:6em;
+            
+        }
+
+        .clock{
+            color: black;
+            text-shadow: 0 0 10px gray;
+            filter: blur(1px);
+            }
+
+        .todo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: rgb(198, 99, 231);
+        }
+
+        .btn button{
+            padding: 10px 30px;
+            margin: 0.5em;
+            outline: none;
+            color: white;
+            border-radius: 30px;
+            border: 2px solid #fff;
+            background-color: hsl(226, 74%, 72%);
+            box-shadow:  0 0 10px gray;
+            transition: 500ms;
+            font-weight: 600;
+        }
+
+        .btn button:hover{
+            transition: 500ms;
+            background-color: hsl(226, 74%, 60%);
+    
+        }
+
+        .btn{
+            display: flex;
+            align-items: start;
+            justify-content: start;
+        }
+
+        .ulcon{
+            background-color: #ffffff34;
+            height: 30em ;
+            width:20em;
+            box-shadow:  0  0 10px gray;
+            border-radius: 15px;
+            border:5px solid rgb(255, 255, 255);
+            overflow-y:scroll ;
+            overflow-x: hidden;
+        } 
+
+        ::-webkit-scrollbar{
+            background-color:rgba(0, 0, 255, 0);
+            
+        }
+
+        ::-webkit-scrollbar-track{
+            background-color: rgba(255, 0, 0, 0);
+            margin: 20px;
+            border-radius:20px;
+            right: 40px;
+        }
+
+        ::-webkit-scrollbar-thumb{
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.163);
+            border: 2px solid white;
+        }
+
+        #tL{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+        }
+
+       #tL li {
+            margin: 10px;
+            height: 120px;
+            width: 250px;
+            background-color: rgb(255, 255, 255);
+            list-style: none;
+            display: flex;
+            align-items: start;
+            justify-content: start; 
+            padding: 10px 10px ;  
+            overflow-y:hidden ;    
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 0 10px gray;    
+            border: 2px solid rgb(198, 99, 231); 
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .divofbtn{
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            flex-direction: row;
+            height: 120px;
+            width: 250px;
+            position: absolute;
+            
+        }
+
+        .divofbtn button{
+            outline: none;
+            background: hsl(0, 0%, 100%);
+            border: 2px solid black;
+            padding: 5px 5px;
+            border-radius: 20%;
+            box-shadow: 0 0 2px rgba(128, 128, 128, 0.586);
+            transition: 200ms;
+        }
+
+        .divofbtn button:hover{
+            background: hsl(0, 0%, 80%);
+        }
+
+
+        .inText{
+            outline: none;
+            border: none;
+            background-color: white;
+            padding: 10px;
+            width:1em;
+            transition: 1s;
+            transition-delay: 8s;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .inText:focus{
+            width: 13em;
+            transition: 1s;
+            
+        }

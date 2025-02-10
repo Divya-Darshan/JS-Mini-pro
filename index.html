@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/JS.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>JavaScript</title>
+</head>
+<body >
+    
+    <div class="num" style="background-color: rgb(0, 255, 119);">    
+        <div>
+
+            <center>
+                Number Counter
+            </center>
+
+            <div class="card">
+                <div id="count">
+                    0
+                </div>
+
+                <button id="add">add</button>
+
+                <button id="re">reset</button>
+
+                <button id="sub">subtract</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="dies-roll">
+        <div>
+                <center>Random Number Counter</center>
+            <div class="in">
+
+                <input type="text" placeholder="Enter the Range.." id="roll-input">
+
+                <button id="roll-btn" type="button">roll</button>
+
+                <div id="roll-out">
+                        
+                </div>
+
+            </div>
+
+        </div>
+</div>
+
+<div class="clockcon">
+    <div >
+
+            <center>A Live Clock</center>
+
+            <div class="clock" id="clock">
+            Clock is not working!..
+            </div>
+
+    </div>
+</div>
+
+<div class="todo">
+    <!-- hello -->
+<div>
+    <center>A ToDo list</center>
+    <div class="btn">
+        <div>
+            <input type="text" maxlength="160" class="inText" placeholder="!!." id="inputTask" >
+        <button onclick="addTask()">
+            ADD
+        </button >
+    </div>
+    </div>
+
+    <div class="ulcon">
+
+        <ul id="tL">
+
+            <li id="li">
+                Add a new Task here!.
+
+                <div class="divofbtn">
+                    <button id="btnx" onclick="re()">X</button>
+
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+</div>
+</body>
+</html>
