@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amos Global Solutions</title>
+       <!-- GOOGLE  FONTS -->
+       <link rel="preconnect" href="https://fonts.gstatic.com">
+       <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&amp;display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+       <!-- OWL CAROUSEL -->
+       <!-- BOX ICONS -->
+       <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+       <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+       <!-- APP CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="grid.css">
+
+    <style>
+
+
+:root {
+    --main-color: #c0392b;
+    --body-bg: #ffffff;
+    --box-bg: #ffffff;
+    --text-color: #000000;
+
+    --nav-height: 60px;
+    --space-top: 30px;
+
+        --gradient-color: linear-gradient(90deg,
+        hsl(58.67deg 100% 72.45%) 0%, hsl(60.92deg 100% 47.71%));
+        --black-color: hsl(225, 15%, 6%);
+        --reflection-color: hsla(48, 30%, 95%, .3);
+        --body-color: hsl(48, 100%, 98%);
+      
+    
+        --body-font: "Montserrat", sans-serif;
+        --normal-font-size: 1rem;
+   
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+img {
+    max-width: 100%;
+}
+
+.main-color {
+    color: var(--main-color);
+}
+
+.container {
+    max-width: 1920px;
+    padding: 0 40px;
+    margin: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    background-color: #ffffff;
+    box-shadow: 0 0 30px black;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-color);
+    height: var(--nav-height);
+}
+
+.nav a {
+    color:black;
+}
+
+
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: larger;
+    font-weight: 600;
+}
+
+.nav-menu li ~ li {
+    margin-left: 30px;
+}
+
+
+
+.nav-menu a:hover {
+    color: var(--main-color);
+}
+
+.nav-menu a.btn:hover,
+a.logo:hover,
+a.movie-item:hover {
+    color: unset;
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 1280px) {
+    html {
+        font-size: 14px;
+    }
+
+    .hero-slide-item {
+        padding-top: 50%;
+    }
+
+}
+
+@media only screen and (max-width: 850px) {
+    html {
+        font-size: 12px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero-slide-item {
+        height: max-content;
+        padding-top: unset;
+    }
+
+    .item-content-wraper {
+        width: 100%;
+        height: 100%;
+        padding-bottom: 20px;
+        padding-right: 5rem;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-slide-item-content {
+        position: relative;
+    }
+
+    .hero-slide-item img {
+        height: 100%;
+    }
+
+    .item-content-title {
+        font-size: 3rem;
+    }
+
+    .hamburger-menu {
+        display: grid;
+    }
+
+    .nav-menu {
+        /* display: none; */
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        background-color: #000000;
+        flex-direction: column;
+        width: 80%;
+        height: 100vh;
+        padding: 20px;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-menu li {
+        margin: 10px 30px;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+}
+
+
+/=============== BUTTON ===============/
+.container {
+    height: 50vh;
+    margin-inline: 1.5rem;
+    display: grid;
+    place-items: center;
+  }
+  
+  .button {
+    position: relative;
+    transition: transform .4s;
+  }
+  
+  .button__content {
+    position: relative;
+    background: var(--gradient-color);
+    padding: 1.25rem 3rem;
+    border-radius: 4rem;
+    border: 3px solid var(--black-color);
+    color: var(--black-color);
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    overflow: hidden;
+  }
+  
+  .button__text {
+    font-weight: 700;
+  }
+  
+  .button__icon {
+    font-size: 1.5rem;
+  }
+  
+  .button__text, 
+  .button__icon {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Reflection shapes */
+  .button__reflection-1, 
+  .button__reflection-2 {
+    width: 8px;
+    height: 120px;
+    background-color: var(--reflection-color);
+    rotate: 30deg;
+    position: absolute;
+    inset: 0;
+    top: 0;
+    left: -180%;
+    margin: auto;
+    transition: left .6s cubic-bezier(.2, .5, .2, 1.2);
+  }
+  
+  .button__reflection-1::after {
+    content: "";
+    width: 26px;
+    height: 100%;
+    background-color: var(--reflection-color);
+    position: absolute;
+    top: -1rem;
+    left: 1.25rem;
+  }
+  
+  .button__reflection-2::after {
+    content: "";
+    width: 40px;
+    height: 100%;
+    background-color: var(--reflection-color);
+    position: absolute;
+    top: -1rem;
+    left: .8rem;
+  }
+  
+  /* Moving geometric shapes */
+  .button img {
+    position: absolute;
+    opacity: 0;
+    transition: transform .5s, opacity .5s;
+  }
+  
+  .button__star-1 {
+    width: 20px;
+    top: -14px;
+    left: -16px;
+    transform: rotate(48deg) scale(.1);
+  }
+  
+  .button__star-2 {
+    width: 40px;
+    right: -10px;
+    top: -4px;
+    transform: rotate(-48deg) scale(.1);
+  }
+  
+  .button__circle-1, 
+  .button__circle-2 {
+    width: 8px;
+  }
+  
+  .button__circle-1 {
+    top: -8px;
+    left: 58px;
+    transform: scale(.1);
+  }
+  
+  .button__circle-2 {
+    right: 34px;
+    bottom: -8px;
+    transform: scale(.1);
+  }
+  
+  .button__diamond {
+    width: 18px;
+    top: -18px;
+    right: 62px;
+    transform: scale(.1);
+  }
+  
+  .button__triangle {
+    width: 30px;
+    left: 15px;
+    bottom: -16px;
+    transform: rotate(-48deg) scale(.1);
+  }
+  
+  /* Gradient shadow */
+  .button__shadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--gradient-color);
+    padding: 1.25rem 3rem;
+    border-radius: 4rem;
+    border: 3px solid var(--black-color);
+    z-index: -1;
+    transition: transform .3s;
+  }
+  
+  /* View shadow gradient */
+  .button:hover .button__shadow {
+    transform: translate(-.5rem, .5rem);
+  }
+  
+  /* Move reflection */
+  .button:hover .button__reflection-1 {
+    left: 120%;
+  }
+  
+  .button:hover .button__reflection-2 {
+    left: -70%;
+  }
+  
+  /* View geometric shapes */
+  .button:hover {
+    transform: rotate(-4deg) scale(1.1);
+  }
+  
+  .button:hover img {
+    opacity: 1;
+  }
+  
+  .button:hover .button__star-1 {
+    transform: scale(1.1);
+    transition-delay: .1s;
+  }
+  
+  .button:hover .button__star-2 {
+    transform: scale(1.1);
+  }
+  
+  .button:hover .button__circle-1 {
+    transform: translateY(-8px) scale(1.1);
+    transition-delay: .1s;
+  }
+  
+  .button:hover .button__circle-2 {
+    transform: translate(-20px, 20px) scale(1.1);
+  }
+  
+  .button:hover .button__diamond {
+    transform: translateY(7px) rotate(-24deg) scale(1.1);
+  }
+  
+  .button:hover .button__triangle {
+    transform: rotate(-12deg) scale(1.1);
+  }
+
+
+
+
+        .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+[class*="col-"] {
+    padding: 0 15px;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+/* MEDIUM SCREEN */
+
+@media only screen and (max-width: 1280px) {
+    .col-md-1 {
+        width: 8.33%;
+    }
+
+    .col-md-2 {
+        width: 16.66%;
+    }
+
+    .col-md-3 {
+        width: 25%;
+    }
+
+    .col-md-4 {
+        width: 33.33%;
+    }
+
+    .col-md-5 {
+        width: 41.66%;
+    }
+
+    .col-md-6 {
+        width: 50%;
+    }
+
+    .col-md-7 {
+        width: 58.33%;
+    }
+
+    .col-md-8 {
+        width: 66.66%;
+    }
+
+    .col-md-9 {
+        width: 75%;
+    }
+
+    .col-md-10 {
+        width: 83.33%;
+    }
+
+    .col-md-11 {
+        width: 91.66%;
+    }
+
+    .col-md-12 {
+        width: 100%;
+    }
+}
+
+/* SMALL SCREEN */
+
+@media only screen and (max-width: 850px) {
+    .col-sm-1 {
+        width: 8.33%;
+    }
+
+    .col-sm-2 {
+        width: 16.66%;
+    }
+
+    .col-sm-3 {
+        width: 25%;
+    }
+
+    .col-sm-4 {
+        width: 33.33%;
+    }
+
+    .col-sm-5 {
+        width: 41.66%;
+    }
+
+    .col-sm-6 {
+        width: 50%;
+    }
+
+    .col-sm-7 {
+        width: 58.33%;
+    }
+
+    .col-sm-8 {
+        width: 66.66%;
+    }
+
+    .col-sm-9 {
+        width: 75%;
+    }
+
+    .col-sm-10 {
+        width: 83.33%;
+    }
+
+    .col-sm-11 {
+        width: 91.66%;
+    }
+
+    .col-sm-12 {
+        width: 100%;
+    }
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+MX+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+section{
+    font-family: "Poppins", serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.vid{
+    margin-bottom: 2pc;
+}
+
+.vid > button{
+    position: relative;
+    top: -50px;
+    left: 10px;
+    cursor: pointer;
+    outline: none;
+    border: none ;
+    border-radius: 50%;
+    background-color: black ;
+    padding: 10px;
+    opacity: 60%;
+} 
+
+
+.c1{
+    display: flex;
+    justify-content: center;
+
+
+}
+
+
+.card1{
+    margin: 10px;
+    padding: 20px;
+    border: 0.5px solid hsl(61, 100%, 50%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px hsla(61, 100%, 52%, 0.445);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: rgb(98, 103, 107);
+}
+
+.car-img > img{
+    opacity: 60%;
+}
+
+.con-car{
+    padding-left:20px; 
+}
+
+
+
+
+
+
+.clg-img{
+    justify-content: center;
+    margin: 10px;
+}
+.clg{
+    box-sizing: border-box;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+   justify-content: center;
+   align-items: center;
+      padding: 60px 0px 115px 0px;
+      --widgets-spacing: 20px 20px;
+      position: relative;
+      margin: 0 15rem;
+  }
+
+.clg-img > img{
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2)100%, transparent);
+    border-radius: 12px 12px 0px 0px;
+
+}
+
+.con-clg{
+    font-size: 40px;
+    top: 0;
+    left: 50rem;
+    
+}
+
+
+
+.clg-content{
+    position: relative;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 600;
+    justify-items: center;
+    align-items: center;
+    padding-top: 30px;
+    margin-left: 30px;
+    padding-bottom: 30px;
+   
+}
+
+
+
+.sub-con-clg{
+    
+    top: 120px;
+    left: 50rem;
+    font-size: small;
+    font-weight:0;
+    color: rgb(73, 73, 73);
+}
+
+
+/* scroller*/
+
+.gs-university-icons-container {
+    margin-top:8pc;
+    text-align: center;
+}
+
+.gs-university-icons-container span {
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+    font-family: InterRegular;
+    margin-bottom: 32px;
+    color: var(--themblackshadefontlite);
+}
+
+.gs-university-scrolling {
+    width: 100%;
+    max-width: 900px;
+    overflow: hidden;
+    position: relative;
+    margin: 4pc auto;
+}
+
+.gs-university-icons {
+    animation: bg-slide 50s linear infinite;
+    display: table;
+}
+
+.gs-university-icons table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 30px 20px;
+}
+
+.gs-university-icons td {
+    width: 66px;
+}
+
+.gs-university-icons .university-logo {
+    width: 90px;
+    height: 80px;
+    margin-right: 32px;
+    vertical-align: middle;
+    filter: grayscale(50%);
+    opacity: 40%;
+    object-fit: contain;
+}
+
+
+
+
+.scroll-blurred-hide {
+    position: absolute;
+    z-index: 1;
+    width: 90px;
+    top: 0;
+    bottom: 0;
+}
+
+.scroll-blurred-left {
+    background: linear-gradient(to left, rgba(194, 255, 204, 0), rgba(255, 255, 255, 1));
+    left: -1px;
+}
+
+.scroll-blurred-right {
+    background: linear-gradient(to right, rgba(194, 255, 204, 0), rgba(255, 255, 255, 1));
+    right: -1px;
+}
+
+
+
+
+@keyframes bg-slide {
+    from {
+        transform: translateX(0%)
+    }
+
+    to {
+        transform: translateX(-73.6%)
+    }
+}
+
+@keyframes company-slides {
+    from {
+        transform: translateX(0%)
+    }
+
+    to {
+        transform: translateX(-62.6%)
+    }
+}
+
+@keyframes verticalscroll {
+    0% {
+        transform: translateY(50%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+header {
+    height: 85px;
+    background: var(--themlitewhiteshade);
+    box-sizing: border-box;
+    max-width: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    box-shadow: 0px 1px 30px 4px #00000010;
+}
+
+header .gs-header-inner-block {
+    height: 95px;
+    margin: auto;
+    padding: 15px 0px 26px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: var(--maxwidth);
+}
+
+header .gs-header-inner-block .header-logo {
+    height: 48px;
+    width: 186px;
+    object-fit: contain;
+    position: absolute;
+    bottom: -26px;
+}
+
+header .gs-header-inner-block .header-left {
+    width: 20%;
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+}
+
+header .header-menu {
+    list-style: none;
+}
+
+header .header-menu .header-menu-list {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    position: relative;
+    margin-left: 24px;
+}
+
+header .header-menu .header-menu-list-contact {
+    float: right;
+    font-family: charterBold;
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+header .header-menu .header-menu-list img {
+    height: 10px;
+    width: 10px;
+    vertical-align: middle;
+    margin-left: 4px;
+}
+
+header .header-menu .header-menu-list p {
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.download-cta {
+    background: var(--themeorange);
+    border-radius: 25px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--ctaformheight);
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.download-cta-left {
+    padding: 25px 50px 10px 50px;
+}
+
+.download-cta-left span {
+    background: var(--themblackshadefont);
+    color: var(--themewhiteshade);
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 4px 17px;
+    border-radius: 15px;
+    font-family: InterSemiBold;
+    letter-spacing: 3px;
+    display: inline-block;
+}
+
+.download-cta-left p {
+    font-size: 21px;
+    font-weight: 600;
+    max-width: 380px;
+    margin: 10px 0px;
+    font-family: InterBold;
+    line-height: 30px;
+    font-weight: normal;
+}
+
+.download-cta-right {
+    display: flex;
+}
+
+.gs-cta-download-cards {
+    margin-right: 20px;
+    background: var(--themewhiteshade);
+    border-radius: 15px;
+    height: 155px;
+    width: 135px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/scroller/
+
+
+/*core value and our */
+.core-principles{
+    margin-left:90px;
+    margin-right: 90px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.core-h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    font-weight: bolder;
+    font-size: x-large;
+    
+}
+.amos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffffff8;
+    border-bottom:3px solid black;
+    border-top: 3px solid black;
+    padding:90px 30px;
+    
+}
+.amos > div{
+    border-radius: 12px;
+
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.459);
+    margin: 10px;
+    background-color: white;
+    padding: 16px;
+    width: 275px;
+    height: 20pc;
+    transition: 1s;
+}
+.amos > div:hover{
+    box-shadow: 0px 0px 20px  rgba(0,0,0,0.29);
+    transition: 1s;
+    scale: 1.5;
+}
+.amos-p{
+    font-size: large;
+    font-weight: 600 ;
+    margin-top: 20px;
+}
+
+.amos-h{
+    font-size: large;
+    border-bottom: 2px solid black;
+}
+.services{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    margin:60px;
+}
+
+
+.services-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-card> .ser1 > div{
+    border-radius: 5px;
+    background-color: #a9caaa;
+    width: 500px;
+    height: 400px ;
+    margin: 50px;
+    padding: 30px;
+    box-shadow:  2px 2px 20px #a9caaa;
+
+}
+
+.ser-con{
+    padding: 20px 20pc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.services-card> .ser2 > div{
+    border-radius: 5px;
+    background-color: #a9caaa;
+    width: 400px;
+    height: 450px ;
+    margin: 60px;
+    padding: 30px;
+    box-shadow:  2px 2px 20px #a9caaa;
+}
+
+.ser2 a{
+    font-weight: 600;
+   border-bottom: 3px solid black;
+   
+}
+
+.ser1 a{
+    font-weight: 600;
+   border-bottom: 3px solid black;
+}
+
+
+
+.services-card-h2{
+    font-size: large;
+    padding-bottom: 20px;
+}
+.services-card-p{
+    font-size: large;
+    color: #454545;
+}
+//
+
+p{
+    font-weight: 600;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <section class="nav">
+    <div class="nav-wrapper">
+        <div class="containr">
+            <div class="nav">
+                <a href="#" class="logo">
+                     <img src="https://demo.amosglobalsolutions.com/wp-content/uploads/2024/12/logo.png" style="left: 20px;position: relative;" alt="" height="50px" width="100px">
+                </a>
+
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="https://web.whatsapp.com/send?phone=918828485326&text=Hello!%20I%20am%20interested%20in%20Studying%C2%A0abroad.">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Our Partners</a></li>
+                    <li><a href="#">Opportunities</a></li>
+                    <li><a href="#">Contact Us</a></li>                
+                </ul>
+                <!-- MOBILE MENU TOGGLE -->
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <div class="hamburger"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="vid">
+
+    <video id="myVideo" autoplay loop muted height="auto" width="100%">
+        <source src="vid/AMOS-Introduction.mp4"  type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <button id="audioButton" class="audio-button"><i style="color: white;" class="fa-solid fa-volume-xmark"></i></button>
+
+
+</section>
+
+
+
+<section class="card">
+
+    <div class="c1">
+        
+        <div class="card1">
+          <div class="car-img">
+            <img src="https://demo.amosglobalsolutions.com/wp-content/uploads/2024/12/v.png" height="auto" width="40px" alt="">
+            </div>
+            
+            <div class="con-car" >
+            Student Visa Assistance
+            </div>
+        </div>
+
+        <div class="card1">
+          <div class="car-img">
+            <img src="https://demo.amosglobalsolutions.com/wp-content/uploads/2024/12/h.png" height="auto" width="40px" alt="">
+            </div>
+            
+            <div class="con-car" >
+            Student Visa Assistance
+            </div>
+        </div>
+
+        <div class="card1">
+          <div class="car-img">
+            <img src="https://demo.amosglobalsolutions.com/wp-content/uploads/2024/12/f.png" height="auto" width="40px" alt="">
+            </div>
+            
+            <div class="con-car" >
+            Student Visa Assistance
+            </div>
+        </div>
+
+        <div class="card1">
+          <div class="car-img">
+            <img src="https://demo.amosglobalsolutions.com/wp-content/uploads/2024/12/l.png" height="auto" width="40px" alt="">
+            </div>
+            
+            <div class="con-car" >
+            Student Visa Assistance
+            </div>
+        </div>
+
+        <div class="card1">
+            <div class="car-img"iv>      
+            <img src="https://demo.amosglobalsolutions.com/wp-content/uploads/2024/12/c.png" height="auto" width="40px" alt="">
+            </div>
+            
+            <div class="con-car" >
+            Student Visa Assistance
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="e-btn">
+    <div class="container">
+        <a href="#" class="button">
+           <div class="button__content">
+              <span class="button__text">Check My Eligibility</span>
+              <i class="fa-solid fa-magnifying-glass"></i>
+
+              <div class="button__reflection-1"></div>
+              <div class="button__reflection-2"></div>
+           </div>
+
+           <img src="https://demo.amosglobalsolutions.com/wp-content/uploads/2024/12/l.png" alt="" class="button__star-1">
+           <img src="https://demo.amosglobalsolutions.com/wp-content/uploads/2024/12/plane.png" alt="" class="button__star-2">
+           <img src="https://demo.amosglobalsolutions.com/wp-content/uploads/2024/12/star.png" alt="" class="button__circle-1">
+           <img src="https://demo.amosglobalsolutions.com/wp-content/uploads/2024/12/star.png" alt="" class="button__circle-2">
+           <img src="https://demo.amosglobalsolutions.com/wp-content/uploads/2024/12/diamond.png" alt="" class="button__diamond">
+           <img src="https://demo.amosglobalsolutions.com/wp-content/uploads/2024/12/star.png" alt="" class="button__triangle">
+           
+           <div class="button__shadow"></div>
+        </a>
+     </div>
+</section>
+
+
+
+<section class="clg">
+
+    <div class="clg-img">
+        <img src="https://demo.amosglobalsolutions.com/wp-content/uploads/2024/12/clg.jpg" height="auto" width="600px" alt="">
+    </div>
+
+    <div class="clg-content">
+
+    <div class="con-clg">
+        Achieve Your Dream of <br> Studying Abroad with Amos Global Solutions.
+    </div>
+ <br>
+    <div class="sub-con-clg">
+        Let Amos Global Solutions be your guide to studying abroad. <br> From visa assistance to university placement and post-arrival services, <br> we have you covered every step of the way.
+    </div>
+</div>
+
+</section>
+
+
+
+  
+<section class="gs-university-icons-container limitwidth">
+
+    
+    <div class="gs-university-scrolling">
+        <div class="scroll-blurred-hide scroll-blurred-left"></div>
+        <div class="scroll-blurred-hide scroll-blurred-right"></div>
+        <div class="gs-university-icons">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><img src="img/clg/fifth country/harvard.jpg.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/mit.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/prince.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/stanford.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/harvard.jpg.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/mit.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/prince.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/stanford.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/harvard.jpg.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/mit.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/prince.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/stanford.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/harvard.jpg.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/mit.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/prince.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/stanford.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/harvard.jpg.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/mit.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/prince.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/stanford.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/harvard.jpg.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/mit.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/prince.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/stanford.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/harvard.jpg.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/mit.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/prince.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/stanford.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/harvard.jpg.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/mit.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/prince.png" class="university-logo"></td>
+                        <td><img src="img/clg/fifth country/stanford.png" class="university-logo"></td>
+                       
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="gs-university-scrolling">
+        <div class="scroll-blurred-hide scroll-blurred-left"></div>
+        <div class="scroll-blurred-hide scroll-blurred-right"></div>
+        <div class="gs-university-icons">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><img src="img/clg/first country logo/cardiff unviersity.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/kings college of london.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/logo 2.png" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/manachester.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/new castle .jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/oxford brookes.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/univeristy_of_bedfordshire.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/univerit .jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/university college of bringham .jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/university of derby .jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/university of notthigham.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/cardiff unviersity.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/kings college of london.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/logo 2.png" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/manachester.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/new castle .jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/oxford brookes.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/univeristy_of_bedfordshire.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/univerit .jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/university college of bringham .jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/university of derby .jpg" class="university-logo"></td>
+                        <td><img src="img/clg/first country logo/university of notthigham.jpg" class="university-logo"></td>
+                        
+                    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="gs-university-scrolling">
+        <div class="scroll-blurred-hide scroll-blurred-left"></div>
+        <div class="scroll-blurred-hide scroll-blurred-right"></div>
+        <div class="gs-university-icons">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><img src="img/clg/fourth country logo/aut.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/manukau int .jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/massey university.png" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/otago.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/university of auckland.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/unniversity of otago.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/unversity of canterbury.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/unversity of waikato.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/aut.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/manukau int .jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/massey university.png" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/otago.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/university of auckland.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/unniversity of otago.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/unversity of canterbury.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/unversity of waikato.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/aut.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/manukau int .jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/massey university.png" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/otago.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/university of auckland.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/unniversity of otago.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/unversity of canterbury.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/unversity of waikato.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/aut.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/manukau int .jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/massey university.png" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/otago.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/university of auckland.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/unniversity of otago.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/unversity of canterbury.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/fourth country logo/unversity of waikato.jpg" class="university-logo"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="gs-university-scrolling">
+        <div class="scroll-blurred-hide scroll-blurred-left"></div>
+        <div class="scroll-blurred-hide scroll-blurred-right"></div>
+        <div class="gs-university-icons">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><img src="img/clg/second country logo/fedration university.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/james cook unoversity.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/melbourne.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/the_university_of_adelaide_college_logo.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/torrens university.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/unviersity of south austrillia.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/uts.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/victoria university.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/fedration university.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/james cook unoversity.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/melbourne.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/the_university_of_adelaide_college_logo.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/torrens university.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/unviersity of south austrillia.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/uts.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/victoria university.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/western sydney unversity.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/western sydney unversity.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/fedration university.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/james cook unoversity.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/melbourne.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/the_university_of_adelaide_college_logo.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/torrens university.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/unviersity of south austrillia.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/uts.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/victoria university.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/fedration university.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/james cook unoversity.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/melbourne.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/the_university_of_adelaide_college_logo.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/torrens university.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/unviersity of south austrillia.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/uts.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/victoria university.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/western sydney unversity.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/second country logo/western sydney unversity.jpg" class="university-logo"></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="gs-university-scrolling">
+        <div class="scroll-blurred-hide scroll-blurred-left"></div>
+        <div class="scroll-blurred-hide scroll-blurred-right"></div>
+        <div class="gs-university-icons">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><img src="img/clg/sixth country/1.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/2.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/3.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/4.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/1.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/2.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/3.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/4.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/1.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/2.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/3.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/4.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/1.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/2.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/3.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/4.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/1.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/2.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/3.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/4.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/1.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/2.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/3.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/4.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/1.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/2.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/3.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/4.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/1.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/2.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/3.png" class="university-logo"></td>
+                        <td><img src="img/clg/sixth country/4.png" class="university-logo"></td>
+         
+
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="gs-university-scrolling">
+        <div class="scroll-blurred-hide scroll-blurred-left"></div>
+        <div class="scroll-blurred-hide scroll-blurred-right"></div>
+        <div class="gs-university-icons">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><img src="img/clg/third country logo/images.png" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/mc gill .jpg" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/mc master unviersity.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/u ottowa.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/ubc.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/university of albertia.png" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/university of calgary.png" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/university of toronto.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/universtiy of water loo.png" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/unversity of montreal.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/images.png" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/mc gill .jpg" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/mc master unviersity.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/u ottowa.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/ubc.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/university of albertia.png" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/university of calgary.png" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/university of toronto.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/universtiy of water loo.png" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/unversity of montreal.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/images.png" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/mc gill .jpg" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/mc master unviersity.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/u ottowa.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/ubc.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/university of albertia.png" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/university of calgary.png" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/university of toronto.jpg" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/universtiy of water loo.png" class="university-logo"></td>
+                        <td><img src="img/clg/third country logo/unversity of montreal.jpg" class="university-logo"></td>
+
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+</section>
+
+
+
+
+
+
+<section class="core-principles">
+    <div class="core-h1">
+        <h1>Our Core Values</h1>
+    </div>
+
+    <div class="amos">
+
+        <div>
+            <h4 class="amos-h">
+                <span style="font-weight:bold; font-size: xx-large; color:#9F302C">A</span>ccountability
+            </h4>
+            <p class="amos-p">Each member of our team takes personal ownership of their responsibilities, ensuring that promises made are promises kept.</p>
+        </div>
+        <div>
+            <h4 class="amos-h">                   <span style="font-weight:bold; font-size: xx-large; color:#9F302C">M</span>indfulness
+            </h4>
+            <p class="amos-p">Mindfulness, to us, means more than just being present; it signifies a deep empathy for the diverse needs and concerns of those we serve.</p>
+        </div>
+        <div>
+            <h4 class="amos-h">                 <span style="font-weight:bold; font-size: xx-large; color:#9F302C">O</span>ptimization
+            </h4>
+            <p class="amos-p">In the face of the unknown, optimism is our guiding light. We believe in the power of positive thinking to fuel motivation and resilience.</p>
+        </div>
+        <div>
+            <h4 class="amos-h">                <span style="font-weight:bold; font-size: xx-large; color:#9F302C">S</span>ynergy
+            </h4>
+            <p class="amos-p">We recognise that the collective strength of diverse talents and perspectives far surpasses individual capabilities.</p>
+        </div>
+
+
+    </div>
+</section>
+
+
+
+<section class="our-services">
+    <div>
+        <div class="rap-ser">
+
+        <div class="services">
+            
+                <h2 style="border-bottom: 2px solid black;">
+                    Our Services
+                </h2>
+                
+        </div>
+
+        <div class="ser-con">
+            <p>
+            Achieve your dream of studying abroad with the expert guidance and support of Amos Global Solutions. From visa assistance to post-arrival services, we’ve got you covered.
+        </p>
+        </div>
+
+        </div>
+
+        <div class="services-card">
+       
+            <div class="ser1">
+            <div>
+                <h2 class="services-card-h2">Student Visa Assistance</h2>
+                <p class="services-card-p">
+                    Comprehensive services designed to support individuals aspiring to pursue education abroad by facilitating the complex process of obtaining a student visa.
+                </p>
+                <div ><a href="#" style="text-decoration: none">Learn more -></a></div>
+            </div>
+            <div>
+                <h2 class="services-card-h2">University Placement</h2>
+                <p class="services-card-p">
+                    Our University Placement Services are designed to assist students in navigating the complex process of choosing and applying to the right universities for their academic and career goals.
+                </p>
+                <div><a href="#" style="text-decoration: none">Learn more -></a></div>
+
+            </div>
+            <div>
+                <h2 class="services-card-h2">Student Visa Assistance</h2>
+                <p class="services-card-p">
+                    Comprehensive services designed to support individuals aspiring to pursue education abroad by facilitating the complex process of obtaining a student visa.
+                </p>
+                <div><a href="#" style="text-decoration: none">Learn more -></a></div>
+            </div>
+            </div>
+
+
+
+
+
+
+            <div class="ser2">
+                <div>
+                    <h2 class="services-card-h2">Student Visa Assistance</h2>
+                    <p class="services-card-p">
+                        Comprehensive services designed to support individuals aspiring to pursue education abroad by facilitating the complex process of obtaining a student visa.
+                    </p>
+                    <div><a href="#" style="text-decoration: none">Learn more -></a></div>
+                </div>
+                <div>
+                    <h2 class="services-card-h2">Student Visa Assistance</h2>
+                    <p class="services-card-p">
+                        Comprehensive services designed to support individuals aspiring to pursue education abroad by facilitating the complex process of obtaining a student visa.
+                    </p>
+                    <div><a href="#" style="text-decoration: none">Learn more -></a></div>
+                </div>
+                <div>
+                    <h2 class="services-card-h2">Student Visa Assistance</h2>
+                    <p class="services-card-p">
+                        Comprehensive services designed to support individuals aspiring to pursue education abroad by facilitating the complex process of obtaining a student visa.
+                    </p>
+                    <div><a href="#" style="text-decoration: none">Learn more -></a></div>
+                </div>
+            </div>
+
+        </div>
+                
+    </div>
+</section>
+
+
+
+
+</body>
+<script>
+// JavaScript
+const video = document.getElementById("myVideo");
+const audioButton = document.getElementById("audioButton");
+
+// Toggle mute/unmute on button click
+audioButton.addEventListener("click", () => {
+  if (video.muted) {
+    video.muted = false;
+    audioButton.innerHTML = '<i style="color: white;" class="fa-solid fa-volume-up"></i>'; // Unmuted icon
+  } else {
+    video.muted = true;
+    audioButton.innerHTML = '<i style="color: white;" class="fa-solid fa-volume-xmark"></i>'; // Muted icon
+  }
+});
+
+</script>
+</html>
