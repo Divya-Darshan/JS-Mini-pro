@@ -86,7 +86,7 @@ function re(e){
   let remv = document.getElementById('li')
   remv.parentNode.removeChild(remv)
 }
-
+// jhftyfytvytv
 
 
  
