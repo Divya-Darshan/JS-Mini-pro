@@ -24,7 +24,7 @@
 
 ---
 
-## 🌈 Live Preview
+## Live Preview
 
 👉 [Check it Out Here](https://divya-darshan.github.io/JS-Mini-pro) 🔗
 
